@@ -9,18 +9,47 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
     <!-- endbower -->
     <!-- endbuild -->
+
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
+
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
   </head>
   <body ng-app="yoAppApp">
     <!-- Add your site or application content here -->
+
+    <div class="container">
+      <div class="header">
+        <!-- navbar-nav doesnt work as well -->
+        <!-- the paths below must agree with those in app.js -->
+        <ul class="nav nav-pills pull-right" ng-controller="NavCtrl">
+          <li ng-class="{ active: isActive('/') }"><a ng-href="#/">Home</a></li>
+          <li ng-class="{ active: isActive('/about') }"><a ng-href="#/about">About</a></li>
+          <li ng-class="{ active: isActive('/yeoman') }"><a ng-href="#/yeoman">Yeoman</a></li>
+        </ul>
+        <h3 class="text-muted">yoApp</h3>
+      </div>
+    </div>
+
     <div class="container" ng-view=""></div>
+
+    <div class="container">
+      <div class="footer">
+        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p><i class="fa fa-cog fa-5x"></i> fa-camera-retro</p>
+      </div>
+    </div>
+
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
+    <!-- <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script> -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -31,6 +60,7 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/nav.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <!-- endbuild -->
 </body>
