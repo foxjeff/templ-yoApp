@@ -34,7 +34,7 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
 
 
-    // enable / disable watching file and executing tests whenever any file changes
+    // enable / disable watching file and executing tests whenever any files change
     autoWatch: true,
 
 
